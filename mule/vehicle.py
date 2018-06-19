@@ -1,6 +1,6 @@
 import time
 from utilities.generic_utilities import Regulator
-import logging
+
 
 class Vehicle():
     ''' Vehicle control
@@ -33,7 +33,6 @@ class Vehicle():
 
         self.state = {}
         self.parts = []
-        logging.info("Initialize Vehicle")
 
 
     def add(self, part):
@@ -44,26 +43,19 @@ class Vehicle():
             part: parts.BasePart
             parts.BasePart is an ABC for a generic vehicle part
         '''
-        logging.info("Adding part {}, {}".format(len(self.parts)+1,part))
-
         if not self.state_keys.issuperset(set(part.input_keys)):
             msg='state missing input key for {}'
             raise KeyError(msg.format(part.__class__.__name__))
 
         self.parts.append(part)
-        
-        logging.info("Registering {} key(s)".format(len(part.output_keys)))
-        
         self.state_keys = self.state_keys.union(set(part.output_keys))
 
-        
+
     def start(self):
         ''' Starts vehicle by starting it constituent parts '''
         self.state = dict.fromkeys(self.state_keys, None)
 
-        
-        for i,part in enumerate(self.parts):
-            logging.info("Starting part {} of {}, {}".format(i+1,len(self.parts),part))
+        for part in self.parts:
             part.start()
 
 
@@ -83,7 +75,6 @@ class Vehicle():
             regulator that ensures rps.
         '''
         step_regulator = Regulator(rps)
-        logging.info("Starting drive loop at {} Hz".format(rps))
 
         try:
             while True:

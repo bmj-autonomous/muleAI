@@ -33,7 +33,7 @@ handlers:
 
 loggers:
     my_module:
-        level: DEBUG
+        level: ERROR
         handlers: [console]
         propagate: no
 
