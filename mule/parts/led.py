@@ -39,9 +39,13 @@ class record_LED(BasePart):
         #GPIO.cleanup()
         #GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.PIN_RED,GPIO.OUT)
+        GPIO.output(self.PIN_RED,  False)
         
     def transform(self, state):
-        GPIO.output(self.PIN_RED,  True)
+        if state['mode']['recording'] == True:
+            GPIO.output(self.PIN_RED,  True)
+        elif state['mode']['recording'] == False:         
+            GPIO.output(self.PIN_RED,  False)
 
     def stop(self):
         GPIO.output(self.PIN_RED,  False)
