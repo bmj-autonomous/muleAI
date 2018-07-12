@@ -5,12 +5,16 @@ parts:
  - joystick:
       type: PS3Controller
  - led: 
+      type: setup_GPIO
+      
+ - led: 
       type: sequential_LED_loop
       arguments:
         PIN_BLUE1: 26
         PIN_BLUE2: 19
         PIN_BLUE3: 13
         PIN_BLUE4: 6
+
  - actuator:
         type: ThrottleController
         arguments:
@@ -32,3 +36,7 @@ parts:
         type: WriteStore
         arguments:
             path: ~/mule_out
+ - led: 
+      type: record_LED
+      arguments: 
+        PIN_RED: 16            
