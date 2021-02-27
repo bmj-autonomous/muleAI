@@ -2,15 +2,19 @@
 
 ---
 
-**muleAI** is inspired by the [DonkeyCar](http://www.donkeycar.com/) project. We decided not to fork, but to rewrite. 
+## Other
+**muleAI** is inspired by the [DonkeyCar](http://www.donkeycar.com/) project. We decided not to fork, but to rewrite.
 
 **muleAI** is a systematic re-implementation of some core functionality with some priorities in mind:
 * Simplicity and consistency in modular design
 * Clean, well-structured implementation conforming to standard software design principles
 
-**muleAI** is a lightweight python library that facilitates research and development in autonomous mobility at RC-scale. 
+**muleAI** is a lightweight python library that facilitates research and development in autonomous mobility at RC-scale.
 
 **muleAI** is a foundation for further experiments in mobility, autonomous hardware, embedded AI, Internet Of Things, ...
+
+## Quickstart
+`python3 ./mule/mule.py`
 
 ## Release candidate 1.0
 
