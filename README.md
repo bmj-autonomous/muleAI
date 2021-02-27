@@ -13,8 +13,12 @@
 
 **muleAI** is a foundation for further experiments in mobility, autonomous hardware, embedded AI, Internet Of Things, ...
 
+## Installation
+
+### Install python poetry
+`poetry install`
 ## Quickstart
-`python3 ./mule/mule.py`
+`poetry run ./mule/mule.py`
 
 ## Release candidate 1.0
 
